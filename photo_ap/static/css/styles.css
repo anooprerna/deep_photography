@@ -1,0 +1,54 @@
+body {
+    background-color: rgba(242, 245, 249, 1); /* Subtle change for a lighter look */
+    font-family: 'Lato', sans-serif;
+    color: #2a4d69;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1.display-4 {
+    color: #19647e;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+p.lead {
+    color: #2a4d69;
+    font-weight: 400;
+    margin-top: 1rem; /* Consistent spacing between paragraphs */
+}
+
+p.lead a {
+    color: #005b96;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p.lead a:hover {
+    color: #003f6b;
+    text-decoration: underline;
+}
+
+img[src$="qr_instagram.jpeg"] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-access-section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Make it slightly more opaque */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-access-section h2 {
+    color: #19647e;
+}
+
+.code-access-section p {
+    margin-bottom: 1rem;
+}
