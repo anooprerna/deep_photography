@@ -1,54 +1,83 @@
 body {
-    background-color: rgba(242, 245, 249, 1); /* Subtle change for a lighter look */
+    background-color: #f4f4f8;
     font-family: 'Lato', sans-serif;
     color: #2a4d69;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container {
+    max-width: 800px; /* Making it narrower for an elegant feel */
 }
 
 h1.display-4 {
     color: #19647e;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+h1.display-4:hover {
+    color: #114357; /* Slight color shift on hover */
 }
 
 p.lead {
+    font-size: 18px; /* Making it slightly larger */
     color: #2a4d69;
-    font-weight: 400;
-    margin-top: 1rem; /* Consistent spacing between paragraphs */
+    font-weight: 300; /* Lighter font weight */
+    margin-top: 2rem;
+    transition: color 0.3s ease-in-out;
 }
 
 p.lead a {
     color: #005b96;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    border-bottom: 1px solid #005b96; /* Underline effect with spacing */
+    padding-bottom: 2px; /* Spacing from the text for the underline effect */
+    transition: color 0.3s ease-in-out;
 }
 
 p.lead a:hover {
     color: #003f6b;
-    text-decoration: underline;
-}
-
-img[src$="qr_instagram.jpeg"] {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #003f6b;
 }
 
 .code-access-section {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95); /* Make it slightly more opaque */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px; /* Making the edges more rounded */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out; /* Added a smooth transition */
 }
 
 .code-access-section h2 {
     color: #19647e;
+    margin-bottom: 20px; /* Added some spacing for elegance */
+    font-family: 'Lato', sans-serif; /* Keeping font consistent */
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
 }
 
-.code-access-section p {
-    margin-bottom: 1rem;
+.code-access-section:hover {
+    transform: translateY(-5px); /* Elevate element slightly on hover */
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12); /* Enhance shadow on hover for depth */
+}
+
+.btn.btn-primary {
+    background-color: #005b96;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px; /* Rounded button */
+    font-weight: 500; /* Making font a bit bolder */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.btn.btn-primary:hover {
+    background-color: #003f6b;
+    transform: translateY(-2px); /* Small lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }

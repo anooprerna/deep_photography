@@ -14,41 +14,47 @@
 </head>
 <body>
 
-<!-- ... Existing code above ... -->
-
 <div class="container text-center mt-5">
     <h1 class="display-4">Deepak Photography Mysore</h1>
     <p class="lead mt-4">Follow me on Instagram <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank">here</a>.</p>
-
-    <div class="mt-4">
-        <p class="lead">Scan to visit!</p>
-        <img src="{% static 'images/qr_instagram.jpeg' %}" alt="QR Code for Instagram" width="150">
-    </div>
 
     <!-- Access Your Photos Section -->
     <div class="row justify-content-center my-5">
         <div class="col-md-6">
             <div class="code-access-section">
-                <h2>Access Your Photos</h2>
-                <p>Enter your unique code below to access your photos:</p>
-                <form action="{% url 'your_pictures' %}" method="post" class="mt-4">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <input type="text" name="unique_code" placeholder="Enter your code here" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Access Photos</button>
-                    </div>
-                    {% if error_message %}
-                    <p class="text-danger">{{ error_message }}</p>
-                    {% endif %}
-                </form>
+                <!-- Displaying today's date dynamically -->
+                <h2>{{ today_date }}</h2>
+                <div class="form-group">
+                    <!-- Trigger modal with button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagramPromptModal">Access Your Photos</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ... Existing code below ... -->
+<!-- Instagram Follow Prompt Modal -->
+<div class="modal fade" id="instagramPromptModal" tabindex="-1" aria-labelledby="instagramPromptModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="instagramPromptModalLabel">Follow on Instagram</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Have you followed Deepak Photography on Instagram?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Not Yet</button>
+                <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-primary">Follow Now</a>
+                <!-- Linking to a different view when they confirm -->
+                <a href="{% url 'access_photos' %}" class="btn btn-success">Yes, I've followed</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
