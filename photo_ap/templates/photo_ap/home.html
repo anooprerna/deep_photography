@@ -47,7 +47,7 @@
                 Have you followed Deepak Photography on Instagram?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Not Yet</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#instagramReminderModal" data-dismiss="modal">Not Yet</button>
                 <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-primary">Follow Now</a>
                 <!-- Linking to a different view when they confirm -->
                 <a href="{% url 'access_photos' %}" class="btn btn-success">Yes, I've followed</a>
@@ -56,6 +56,30 @@
     </div>
 </div>
 
+<!-- Instagram Reminder Modal for 'Not Yet' -->
+<div class="modal fade" id="instagramReminderModal" tabindex="-1" role="dialog" aria-labelledby="instagramReminderLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="instagramReminderLabel">One more step...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please follow us and then click the button below to access your pictures.
+            </div>
+            <div class="modal-footer flex-footer">
+                <div class="footer-section">
+                    <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-follow">Follow</a>
+                </div>
+                <div class="footer-section">
+                    <a href="{% url 'access_photos' %}" class="btn btn-success">Damn you, show me my pictures!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Optional Bootstrap JS -->

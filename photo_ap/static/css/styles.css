@@ -67,17 +67,54 @@ p.lead a:hover {
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12); /* Enhance shadow on hover for depth */
 }
 
-.btn.btn-primary {
-    background-color: #005b96;
-    border: none;
+.btn {
     padding: 12px 20px;
     border-radius: 30px; /* Rounded button */
     font-weight: 500; /* Making font a bit bolder */
     transition: all 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary, .btn.btn-follow {
+    background-color: #005b96;
+    border: none;
+}
+
+.btn.btn-secondary {
+    background-color: #2a4d69;
+    border: none;
+    color: #f4f4f8;
+}
+
+.btn.btn-success {
+    background-color: #19647e;
+    border: none;
+}
+
+.btn.btn-primary:hover, .btn.btn-follow:hover {
     background-color: #003f6b;
     transform: translateY(-2px); /* Small lift effect on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.btn.btn-secondary:hover {
+    background-color: #1e3c50;
+    transform: translateY(-2px); /* Small lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.btn.btn-success:hover {
+    background-color: #114357;
+    transform: translateY(-2px); /* Small lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.modal-footer.flex-footer {
+    display: flex; /* Make use of flexbox */
+    justify-content: space-between; /* Spread the child divs apart */
+    align-items: center; /* Vertically center the child divs */
+}
+
+.modal-footer.flex-footer .footer-section {
+    display: flex; /* Make sure the buttons are side by side */
+    align-items: center; /* Vertically center the buttons */
 }
