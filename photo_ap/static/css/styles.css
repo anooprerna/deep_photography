@@ -118,3 +118,47 @@ p.lead a:hover {
     display: flex; /* Make sure the buttons are side by side */
     align-items: center; /* Vertically center the buttons */
 }
+
+/* New Navbar CSS */
+.navbar {
+    background-color: #19647e !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    color: #f4f4f8 !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #f4f4f8 !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #e1e8ed !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #f4f4f8 !important;
+}
+
+/* Mobile view navbar */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item .nav-link {
+        color: #19647e !important;
+    }
+    .navbar-toggler-icon {
+        background-color: #19647e !important;
+    }
+    .navbar-collapse {
+        background-color: #f4f4f8 !important;
+    }
+}
+
+/* Hover Dropdown CSS */
+.nav-item.dropdown.hover-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;  /* Remove the gap so it doesn't close */
+}
