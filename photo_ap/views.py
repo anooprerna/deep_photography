@@ -13,3 +13,6 @@ def home_page(request):
         'today_date': date.today().strftime("%B %d, %Y")
     }
     return render(request, 'photo_ap/home.html', context)
+
+def about_us(request):
+    return render(request, 'photo_ap/about_us.html')

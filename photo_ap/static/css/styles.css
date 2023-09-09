@@ -162,3 +162,23 @@ p.lead a:hover {
     display: block;
     margin-top: 0;  /* Remove the gap so it doesn't close */
 }
+
+.marquee-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container-about, .founder, .choose-us {
+    margin: 20px !important;
+    padding: 10px !important;
+}
+
+.custom-image-size {
+  width: 200px;
+  height: 200px;
+}
+
+.list-items{
+    padding-left: 130px;
+    padding-top: 20px;
+}
