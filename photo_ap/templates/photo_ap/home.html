@@ -42,7 +42,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#on-spot-pics">On Spot Pics</a>
+                <a class="nav-link" href="{% url 'instant_pics' %}">On Spot Pics</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#reservations">Book a Photoshoot</a>
@@ -57,71 +57,9 @@
 
 <div class="container text-center mt-5">
     <h1 class="display-4">Deepak Photography</h1>
+    <h2 class="display-6">Invest in memories, not just savings.</h2>
     <p class="lead mt-4">Follow me on Instagram <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank">here</a>.</p>
-
-    <!-- Access Your Photos Section -->
-    <div class="row justify-content-center my-5">
-        <div class="col-md-6">
-            <div class="code-access-section">
-                <!-- Displaying today's date dynamically -->
-                <h2>{{ today_date }}</h2>
-                <div class="form-group">
-                    <!-- Trigger modal with button -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagramPromptModal">Access Your Photos</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-
-<!-- Instagram Follow Prompt Modal -->
-<div class="modal fade" id="instagramPromptModal" tabindex="-1" aria-labelledby="instagramPromptModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="instagramPromptModalLabel">Follow on Instagram</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Have you followed Deepak Photography on Instagram?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#instagramReminderModal" data-dismiss="modal">Not Yet</button>
-                <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-primary">Follow Now</a>
-                <!-- Linking to a different view when they confirm -->
-                <a href="{% url 'access_photos' %}" class="btn btn-success">Yes, I've followed</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Instagram Reminder Modal for 'Not Yet' -->
-<div class="modal fade" id="instagramReminderModal" tabindex="-1" role="dialog" aria-labelledby="instagramReminderLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="instagramReminderLabel">One more step...</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Please follow us and then click the button below to access your pictures.
-            </div>
-            <div class="modal-footer flex-footer">
-                <div class="footer-section">
-                    <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-follow">Follow</a>
-                </div>
-                <div class="footer-section">
-                    <a href="{% url 'access_photos' %}" class="btn btn-success">Damn you, show me my pictures!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- Optional Bootstrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -9,10 +9,14 @@ def pictures(request):
 
 
 def home_page(request):
-    context = {
-        'today_date': date.today().strftime("%B %d, %Y")
-    }
-    return render(request, 'photo_ap/home.html', context)
+    return render(request, 'photo_ap/home.html')
 
 def about_us(request):
     return render(request, 'photo_ap/about_us.html')
+
+
+def instant_pics(request):
+    context = {
+        'today_date': date.today().strftime("%B %d, %Y")
+    }
+    return render(request, 'photo_ap/instant_pics.html', context)

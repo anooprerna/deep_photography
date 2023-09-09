@@ -1,0 +1,129 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Deepak Photography</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home_page' %}">Deepak Photography</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+            </li>
+
+            <!-- Portfolio Dropdown -->
+            <li class="nav-item dropdown hover-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+                </a>
+                <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+                    <a class="dropdown-item" href="#pre-wedding">Pre Wedding</a>
+                    <a class="dropdown-item" href="#wedding">Wedding</a>
+                    <a class="dropdown-item" href="#maternity">Maternity</a>
+                    <a class="dropdown-item" href="#new-born">New Born and Toddler</a>
+                    <a class="dropdown-item" href="#miscellaneous">Miscellaneous</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'instant_pics' %}">On Spot Pics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#reservations">Book a Photoshoot</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container text-center mt-5">
+
+    <!-- Access Your Photos Section -->
+    <div class="row justify-content-center my-5">
+        <div class="col-md-6">
+            <div class="code-access-section">
+                <!-- Displaying today's date dynamically -->
+                <h2>{{ today_date }}</h2>
+                <div class="form-group">
+                    <!-- Trigger modal with button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instagramPromptModal">Access Your Photos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Instagram Follow Prompt Modal -->
+<div class="modal fade" id="instagramPromptModal" tabindex="-1" aria-labelledby="instagramPromptModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="instagramPromptModalLabel">Follow on Instagram</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Have you followed Deepak Photography on Instagram?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#instagramReminderModal" data-dismiss="modal">Not Yet</button>
+                <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-primary">Follow Now</a>
+                <!-- Linking to a different view when they confirm -->
+                <a href="{% url 'access_photos' %}" target="_blank" class="btn btn-success">Yes, I've followed</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Instagram Reminder Modal for 'Not Yet' -->
+<div class="modal fade" id="instagramReminderModal" tabindex="-1" role="dialog" aria-labelledby="instagramReminderLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="instagramReminderLabel">One more step...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please follow us and then click the button below to access your pictures.
+            </div>
+            <div class="modal-footer flex-footer">
+                <div class="footer-section">
+                    <a href="https://www.instagram.com/deepak_photography_mysore/" target="_blank" class="btn btn-follow">Follow</a>
+                </div>
+                <div class="footer-section">
+                    <a href="{% url 'access_photos' %}" target="_blank" class="btn btn-success">Damn you, show me my pictures!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
